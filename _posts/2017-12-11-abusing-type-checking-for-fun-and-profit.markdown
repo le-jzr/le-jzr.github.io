@@ -46,7 +46,7 @@ error codes have been used with mixed results. On several occasions, different
 kinds of error returns have been mixed improperly, resulting in hidden bugs
 that only manifest in the rare exceptional conditions.
 
-## Towards the solution
+# Towards the solution
 
 The issue with negative error codes is probably the single greatest blocker
 for a standards-compliant libc in the heart of HelenOS. However, since the code
@@ -78,7 +78,7 @@ mistakes in the process, but I digress. I was already considering how to utilize
 compiler diagnostics to detect problems, so when Jiří started separating the
 error values, I got an idea how to exploit it fully.
 
-## s/int/errno_t
+# s/int/errno_t
 
 The idea is simple. If we mark every error value by a specific type (such as
 `errno_t`, because why not?), then we can make the compiler fail-out on every
